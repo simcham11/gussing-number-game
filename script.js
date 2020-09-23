@@ -6,22 +6,22 @@ let currentRoundNumber = 1;
 const generateTarget = () => {
   return Math.floor(Math.random() * 10)
 }
-const compareGuesses = (humanGuess, computerGuess, target) => {
-  const getHumanGuess = Math.abs(target - humanGuess);
-  const getComputerGuess = Math.abs(target - computerGuess);
+let compareGuesses = (humanGuess, computerGuess, target) => {
+  let getHumanGuess = Math.abs(target - humanGuess);
+  let getComputerGuess = Math.abs(target - computerGuess);
   if(getHumanGuess === getComputerGuess || getHumanGuess < getComputerGuess){
     return true
   }else{
     return false
   }
 }
-const updateScore = (winner) => {
+let updateScore = (winner) => {
   if ('human' === winner) {
     return humanScore++;
   }else if('computer' === winner){
     return computerScore++;
   }
 }
-const advanceRound = () =>{
+let advanceRound = () =>{
   return currentRoundNumber++
 }
